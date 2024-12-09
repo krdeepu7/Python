@@ -1,206 +1,139 @@
-## Operator precedence
-# **
-# %, /, //, *
-# -, +
+## Operator Precedence Demonstration
+# Order of precedence: 
+# ** (exponentiation) > %, /, //, * > - and +
 
-x= 0b010
-print(x)
+# Binary number assignment
+x = 0b011  # Binary for 2
+print(x)  # Output: 2
+
+# Conditional statements with truthy and falsy values
 x = 0
-y =5
-if x < y:                            # Truthy
+y = 5
+
+# Checking conditions and their outcomes
+if x < y:  # Truthy, 0 < 5
+    print('yes')  # Output: yes
+if y < x:  # Falsy, 5 is not < 0
     print('yes')
-if y < x:                            # Falsy
+if x:  # Falsy, 0 is equivalent to False
     print('yes')
-if x:                                # Falsy
+if y:  # Truthy, any non-zero number is True
+    print('yes')  # Output: yes
+if x or y:  # Truthy, y is non-zero
+    print('yes')  # Output: yes
+if x and y:  # Falsy, x is zero (False)
     print('yes')
-if y:                                # Truthy
-    print('yes')
-if x or y:                           # Truthy
-    print('yes')
-if x and y:                          # Falsy
-    print('yes')
-if 'aul' in 'grault':                # Truthy
-    print('yes')
-if 'quux' in ['foo', 'bar', 'baz']:  # Falsy
+if 'aul' in 'grault':  # Truthy, 'aul' is a substring of 'grault'
+    print('yes')  # Output: yes
+if 'quux' in ['foo', 'bar', 'baz']:  # Falsy, 'quux' is not in the list
     print('yes')
 
+# Nested conditional statements
+if 'foo' in ['foo', 'bar', 'baz']:  # Truthy
+    print('Outer condition is true')  # Output: Outer condition is true
 
-if 'foo' in ['bar', 'baz', 'qux']:
-    print('Expression was true')
-    print('Executing statement in suite')
-    print('...')
-    print('Done.')
-print('After conditional')
+    if 10 > 20:  # Falsy
+        print('Inner condition 1')  # Does not execute
 
-# Does line execute?                        Yes    No
-#                                           ---    --
-if 'foo' in ['foo', 'bar', 'baz']:        #  x
-    print('Outer condition is true')      #  x
+    print('Between inner conditions')  # Output: Between inner conditions
 
-    if 10 > 20:                           #  x
-        print('Inner condition 1')        #        x
+    if 10 < 20:  # Truthy
+        print('Inner condition 2')  # Output: Inner condition 2
 
-    print('Between inner conditions')     #  x
+    print('End of outer condition')  # Output: End of outer condition
 
-    if 10 < 20:                           #  x
-        print('Inner condition 2')        #  x
+print('After outer condition')  # Output: After outer condition
 
-    print('End of outer condition')       #  x
-print('After outer condition')            #  x
+# Inline conditional statements
+if 'f' in 'foo': print('1'); print('2'); print('3')  # Outputs 1, 2, 3
+if 'z' in 'foo': print('1'); print('2'); print('3')  # No output
 
-
-if 'f' in 'foo': print('1'); print('2'); print('3')
-
-# 1
-# 2
-# 3
-if 'z' in 'foo': print('1'); print('2'); print('3')
-
-
+# Ternary operator usage
 raining = False
-print("Let's go to the", 'beach' if not raining else 'library')
-#Let's go to the beach
+print("Let's go to the", 'beach' if not raining else 'library')  # Output: Let's go to the beach
 raining = True
-print("Let's go to the", 'beach' if not raining else 'library')
-#Let's go to the libr
-age = 12
+print("Let's go to the", 'beach' if not raining else 'library')  # Output: Let's go to the library
+
+# Another ternary example
+age = 22
 s = 'minor' if age < 21 else 'adult'
-s
+print(s)  # Output: minor
 
-'yes' if ('qux' in ['foo', 'bar', 'baz']) else 'no'
+# Expression evaluation in ternary form
+print('yes' if ('qux' in ['foo', 'bar', 'baz']) else 'no')  # Output: no
 
-
-
-
+# Complex ternary example
 x = y = 40
-z = 1 + x if x > y else y + 2
-print(z) 
-#42
+z = 1 + x if x < y else y + 2
+print(z)  # Output: 42
 
 z = (1 + x) if x > y else (y + 2)
-print(z)
-#42
+print(z)  # Output: 42
 
+## Loop Demonstrations
 
-#Loop
-#Example with List, Tuple, String, and Dictionary Iteration Using for Loops in Python
-
+# Iterating over various data structures
 print("List Iteration")
 l = ["geeks", "for", "geeks"]
 for i in l:
     print(i)
-    
+
 print("\nTuple Iteration")
 t = ("geeks", "for", "geeks")
 for i in t:
     print(i)
-    
+
 print("\nString Iteration")
 s = "Geeks"
 for i in s:
     print(i)
-    
+
 print("\nDictionary Iteration")
-d = dict({'x':123, 'y':354})
+d = {'x': 123, 'y': 354}
 for i in d:
     print("%s  %d" % (i, d[i]))
-    
+
 print("\nSet Iteration")
 set1 = {1, 2, 3, 4, 5, 6}
 for i in set1:
-    print(i),
+    print(i)
 
-
-
-list = ["geeks", "for", "geeks"]
-for index in range(len(list)):
-    print(list[index])
-
-
-list = ["geeks", "for", "geeks"]
-for index in range(len(list)):
-    print(list[index])
-
+# Loop with `else` block
 list = ["geeks", "for", "geeks"]
 for index in range(len(list)):
     print(list[index])
 else:
-    print("Inside Else Block")
+    print("Inside Else Block")  # Output after loop ends
 
-
+# While loops
 n = 5
 while n > 0:
     n -= 1
-    print(n)
+    print(n)  # Counts down from 4 to 0
 
 n = 0
 while n > 0:
     n -= 1
-    print(n)
-a = ['foo', 'bar', 'baz']
-while a:
-    print(a.pop(-1))
+    print(n)  # No output, condition is false
 
-#The Python break and continue Statements
+# Break and continue statements
+n = 5
+while n > 0:
+    n -= 1
+    if n == 2:
+        break  # Exit loop when n == 2
+    print(n)
+print('Loop ended.')  # Output: 4, 3; Loop ended.
 
 n = 5
 while n > 0:
     n -= 1
     if n == 2:
-        break
+        continue  # Skip iteration when n == 2
     print(n)
-print('Loop ended.')
+print('Loop ended.')  # Outputs 4, 3, 1, 0; Loop ended.
 
-
-n = 5
-while n > 0:
-    n -= 1
-    if n == 2:
-        continue
-    print(n)
-print('Loop ended.')
-
-
-n = 5
-while n > 0:
-    n -= 1
-    print(n)
-else:
-    print('Loop done.')
-4
-3
-2
-1
-0
-#Loop done.
-
-a = ['foo', 'bar', 'baz', 'qux']
-s = 'corge'
-
-i = 0
-while i < len(a):
-     if a[i] == s:
-         # Processing for item found
-         break
-     i += 1
-else:
-     # Processing for item not found
-     print(s, 'not found in list.')
-
-#corge not found in list.
-
-
-a = ['foo', 'bar', 'baz']
-while True:
-     if not a:
-         break
-     print(a.pop(-1))
-
-# baz
-# bar
-# foo
-
-
+# Nested loops
 a = ['foo', 'bar']
 while len(a):
     print(a.pop(0))
@@ -208,68 +141,10 @@ while len(a):
     while len(b):
         print('>', b.pop(0))
 
-
-
-n = 5
-while n > 0: n -= 1; print(n)
-
-# 4
-# 3
-# 2
-# 1
-# 0
-
-if True: print('foo')
-
-#foo
-
-a = ['foo', 'bar', 'baz']
-for i in a:
-    print(i)
-
-
-d = {'foo': 1, 'bar': 2, 'baz': 3}
-for k in d:
-    print(k)
-
-i, j = (1, 2)
-print(i, j)
-
-for i, j in [(1, 2), (3, 4), (5, 6)]:
-    print(i, j)
-
-d = {'foo': 1, 'bar': 2, 'baz': 3}
-for k, v in d.items():
-   print('k =', k, ', v =', v)
-
-for n in (0, 1, 2, 3, 4):
-     print(n)
-
-for n in x:
-     print(n)
-
-
-list(range(-5, 5))
-[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
-
-list(range(5, -5))
-[]
-list(range(5, -5, -1))
-[5, 4, 3, 2, 1, 0, -1, -2, -3, -4]
-
-for i in ['foo', 'bar', 'baz', 'qux']:
-    if 'b' in i:
-        break
-    print(i)
-
-for i in ['foo', 'bar', 'baz', 'qux']:
-    if 'b' in i:
-        continue
-    print(i)
-
+# For loop with conditions
 for i in ['foo', 'bar', 'baz', 'qux']:
     if i == 'bar':
         break
     print(i)
 else:
-    print('Done.')  # Will not execute
+    print('Done.')  # Will not execute because of break
