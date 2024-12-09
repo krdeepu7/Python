@@ -1,25 +1,21 @@
 ## Starting the program
 
-# Print a simple "Hello World" message
+ ##print a simple "Hello World" message
 print("Hello world")
-
 # Variable reassignment example
 age = 20  # Initially setting age to 20
 age = 30  # Changing age to 30
 print(age)  # Prints 30
-
 # Example of different data types
 price = 19.95  # Float
 first_name = "Jack"  # String
 is_online = False  # Boolean
 print(is_online)  # Prints False
-
 # Example of grouping related information
 # Patient details
 patient_name = 'Ram'
 patient_age = 20
 is_patient_new = True  # Boolean to indicate if the patient is new
-
 # Print patient details with line breaks
 print(patient_name, '\n', patient_age, '\n', is_patient_new, '\n')
 
@@ -66,12 +62,14 @@ print(10 * 5)  # Multiplication
 print(10 / 3)  # Division (float)
 print(10 // 3)  # Division (integer)
 print(10 % 3)  # Modulus (remainder)
-print(10 ** 3)  # Exponentiation
+print(10 ** 4)  # Exponentiation
 
 # Compound assignment
 x = 10
 x = x + 3  # Adds 3 to x
+print(x)
 x += 3     # Shortcut for x = x + 3
+print(x)
 
 # Operator precedence
 x = 10 + 3 * 2  # Multiplication takes precedence
@@ -83,6 +81,7 @@ print(x)
 x = 3 > 2  # True
 x = 3 == 2  # False
 x = 3 != 2  # True
+print(x)
 
 # Logical operators
 price = 25
@@ -129,7 +128,7 @@ numbers = [1, 2, 3, 4, 5]
 numbers.append(6)  # Adds 6 to the end
 numbers.insert(0, -1)  # Inserts -1 at index 0
 numbers.remove(3)  # Removes first occurrence of 3
-# numbers.clear()  # Clears the list
+#numbers.clear()  # Clears the list
 print(numbers)
 print(1 in numbers)  # Checks if 1 is in the list
 print(len(numbers))  # Prints the length of the list
@@ -150,8 +149,8 @@ for numberr in numbers:
     print(numberr)
 
 # Tuples (immutable lists)
-numbers = (1, 2, 3, 3)
-# numbers[2] = 5  # Uncommenting this will cause an error as tuples are immutable
+numbers = (1, 2, 3, 3,3)
+#numbers[2] = 5  # Uncommenting this will cause an error as tuples are immutable
 print(numbers.count(3))  # Counts occurrences of 3
 
 print ("Done")
